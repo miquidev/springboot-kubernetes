@@ -1,16 +1,169 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mensaje</title>
-    <!-- Enlace a TailwindCSS desde CDN -->
-    <link href="https://cdn.tailwindcss.com" rel="stylesheet">
+    <title>Mensaje de Éxito</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/typeit@7.0.4/dist/typeit.min.js"></script>
+    <style>
+        body {
+            background-color: #1a202c;
+            color: #e2e8f0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            overflow: hidden;
+            margin: 0;
+        }
+
+        #particles-js {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-color: #1a202c;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: 50% 50%;
+            z-index: 0;
+        }
+        .card {
+            position: relative;
+            z-index: 1;
+            box-shadow: 0px 0px 20px rgb(0, 149, 255);
+            width: 90%;
+            max-width: 600px;
+            margin: auto;
+            padding: 2rem;
+            background-color: #2d3748;
+        }
+    </style>
 </head>
-<body class="bg-blue-50 flex justify-center items-center h-screen">
-<div class="text-center p-8 bg-white shadow-lg rounded-lg">
-    <h1 class="text-xl font-bold text-gray-700">¡Enhorabuena Michael Joseph!</h1>
-    <p class="text-gray-600">Has desplegado con éxito tu aplicación en Kubernetes.</p>
+<body class="flex items-center justify-center h-screen">
+<div id="particles-js"></div>
+<div class="flex items-center justify-center h-screen w-full">
+    <div class="card rounded-xl overflow-hidden text-center">
+        <img class="mx-auto rounded-full w-52 h-48 mt-4" src="https://github.com/MichaelQuispeChavez.png" alt="Foto de perfil de GitHub">
+        <div class="p-8">
+            <div class="uppercase tracking-wide text-2xl text-blue-300 font-semibold">Michael Joseph</div>
+            <h2 class="block mt-4 text-3xl leading-tight font-medium text-white">¡Enhorabuena!</h2>
+            <p id="typed-text" class="mt-4 text-lg text-gray-300 font-sans text-xl"></p>
+            <p class="mt-4 text-lg text-gray-300">Créditos: <a href="https://github.com/MichaelQuispeChavez" class="text-blue-300">Michael</a></p>
+        </div>
+    </div>
 </div>
+<script>
+    new TypeIt('#typed-text', {
+        strings: ["Has desplegado con éxito tu aplicación en Kubernetes. ¡Felicitaciones!"],
+        speed: 30,
+        breakLines: false
+    }).go();
+    particlesJS('particles-js',
+        {
+            "particles": {
+                "number": {
+                    "value": 80,
+                    "density": {
+                        "enable": true,
+                        "value_area": 800
+                    }
+                },
+                "color": {
+                    "value": "#ffffff"
+                },
+                "shape": {
+                    "type": "circle",
+                    "stroke": {
+                        "width": 0,
+                        "color": "#000000"
+                    },
+                    "polygon": {
+                        "nb_sides": 5
+                    },
+                },
+                "opacity": {
+                    "value": 0.5,
+                    "random": false,
+                    "anim": {
+                        "enable": false,
+                        "speed": 1,
+                        "opacity_min": 0.1,
+                        "sync": false
+                    }
+                },
+                "size": {
+                    "value": 5,
+                    "random": true,
+                    "anim": {
+                        "enable": false,
+                        "speed": 40,
+                        "size_min": 0.1,
+                        "sync": false
+                    }
+                },
+                "line_linked": {
+                    "enable": true,
+                    "distance": 150,
+                    "color": "#ffffff",
+                    "opacity": 0.4,
+                    "width": 1
+                },
+                "move": {
+                    "enable": true,
+                    "speed": 6,
+                    "direction": "none",
+                    "random": false,
+                    "straight": false,
+                    "out_mode": "out",
+                    "bounce": false,
+                    "attract": {
+                        "enable": false,
+                        "rotateX": 600,
+                        "rotateY": 1200
+                    }
+                }
+            },
+            "interactivity": {
+                "detect_on": "canvas",
+                "events": {
+                    "onhover": {
+                        "enable": true,
+                        "mode": "repulse"
+                    },
+                    "onclick": {
+                        "enable": true,
+                        "mode": "push"
+                    },
+                    "resize": true
+                },
+                "modes": {
+                    "grab": {
+                        "distance": 400,
+                        "line_linked": {
+                            "opacity": 1
+                        }
+                    },
+                    "bubble": {
+                        "distance": 400,
+                        "size": 40,
+                        "duration": 2,
+                        "opacity": 8,
+                        "speed": 3
+                    },
+                    "repulse": {
+                        "distance": 200,
+                        "duration": 0.4
+                    },
+                    "push": {
+                        "particles_nb": 4
+                    },
+                    "remove": {
+                        "particles_nb": 2
+                    }
+                }
+            },
+            "retina_detect": true
+        }
+    );
+</script>
 </body>
 </html>
