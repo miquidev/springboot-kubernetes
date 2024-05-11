@@ -1,5 +1,3 @@
-**# Implementación de Spring Boot en Kubernetes
-
 Esta guía te ayudará a desplegar una aplicación Spring Boot en Kubernetes usando Minikube.
 
 ## Prerrequisitos
@@ -97,4 +95,3 @@ Esta guía te ayudará a desplegar una aplicación Spring Boot en Kubernetes usa
 
 Para probar la aplicación, usa el siguiente formato de URL:
 http://{IpDelNodo}:{PUERTO}/{URL DE LA API}
-Reemplaza `{IpDelNodo}` con la IP de tu nodo, `{PUERTO}` con el número de puerto y `{URL DE LA API}` con el endpoint específico de la API que deseas acceder.**
