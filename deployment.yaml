@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: spring-boot-kubernetes
-          image: michaeljc23/springboot-kubernetes:v1
+          image: springboot-kubernetes:v1
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 8080

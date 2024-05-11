@@ -1,13 +1,26 @@
-apiVersion: v1
-kind: Service
+apiVersion: apps/v1
+kind: Deployment
 metadata:
-  name: springboot-kubernetes
+  name: spring-boot-kubernetes
   namespace: vallegrande
 spec:
   selector:
-    app: spring-boot-kubernetes
-  ports:
-    - protocol: "TCP"
-      port: 8080
-      targetPort: 8080
-  type: NodePort
+    matchLabels:
+      app: spring-boot-kubernetes
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: spring-boot-kubernetes
+    spec:
+      containers:
+        - name: spring-boot-kubernetes
+          image: springboot-kubernetes:v1
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 8080
+          resources:
+            requests:
+              cpu: "100m"
+            limits:
+              cpu: "500m"

@@ -37,7 +37,13 @@ Esta guía te ayudará a desplegar una aplicación Spring Boot en Kubernetes usa
     docker images
     ```
 
-4. **Desplegar la aplicación**
+4. **Crear espacio de trabajo**
+
+    ```bash
+    kubectl create namespace <namespace>
+    ```
+
+5. **Desplegar la aplicación**
 
     Aplica la configuración de despliegue de Kubernetes:
 
@@ -63,7 +69,13 @@ Esta guía te ayudará a desplegar una aplicación Spring Boot en Kubernetes usa
     kubectl logs <nombre-del-pod>
     ```
 
-5. **Exponer la aplicación**
+    Para ver los registros de un pod específico en tiempo real:
+
+    ```bash
+    kubectl logs <nombre-del-pod> -f
+    ```
+
+6. **Exponer la aplicación**
 
     Aplica la configuración del servicio de Kubernetes para exponer la aplicación:
 
@@ -83,7 +95,7 @@ Esta guía te ayudará a desplegar una aplicación Spring Boot en Kubernetes usa
     kubectl get svc
     ```
 
-6. **Verificar los nodos**
+7. **Verificar los nodos**
 
     Para obtener más detalles sobre los nodos en el clúster:
 
