@@ -1,5 +1,7 @@
 package com.michael.springbootkubernetes;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.http.ResponseEntity;
@@ -15,17 +17,19 @@ import java.util.stream.Collectors;
 @SpringBootApplication
 @RestController
 public class SpringbootKubernetesApplication {
+	private static final Logger LOGGER = LoggerFactory.getLogger(SpringbootKubernetesApplication.class);
+
 	@GetMapping("/message")
 	public ModelAndView displayMessage() {
-		System.out.println("HOLA DESDE MESSAGE!!");
+		LOGGER.info("HOLA DESDE MESSAGE!!");
 		return new ModelAndView("message");
 	}
 
 	@GetMapping("/list")
 	public ResponseEntity<List<Map<String, String>>> list() {
-		System.out.println("HOLA DESDE LIST!!");
+		LOGGER.info("HOLA DESDE LIST!!");
 		List<String> names = Arrays.asList(
-				"María García",
+				"Michael Quispe",
 				"Juan Rodríguez",
 				"Ana Martínez",
 				"David López",
