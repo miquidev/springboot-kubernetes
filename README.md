@@ -48,31 +48,31 @@ Esta guía te ayudará a desplegar una aplicación Spring Boot en Kubernetes usa
     Aplica la configuración de despliegue de Kubernetes:
 
     ```bash
-    kubectl apply -f deployment.yaml
+    kubectl apply -f deployment.yaml -n <namespace>
     ```
 
     Puedes verificar el estado de los despliegues con:
 
     ```bash
-    kubectl get deployments
+    kubectl get deployments -n <namespace>
     ```
 
     Y el estado de los pods con:
 
     ```bash
-    kubectl get pods
+    kubectl get pods -n <namespace>
     ```
 
     Para ver los registros de un pod específico:
 
     ```bash
-    kubectl logs <nombre-del-pod>
+    kubectl logs <nombre-del-pod> -n <namespace>
     ```
 
     Para ver los registros de un pod específico en tiempo real:
 
     ```bash
-    kubectl logs <nombre-del-pod> -f
+    kubectl logs <nombre-del-pod> -f -n <namespace>
     ```
 
 6. **Exponer la aplicación**
@@ -80,19 +80,19 @@ Esta guía te ayudará a desplegar una aplicación Spring Boot en Kubernetes usa
     Aplica la configuración del servicio de Kubernetes para exponer la aplicación:
 
     ```bash
-    kubectl apply -f service.yaml
+    kubectl apply -f service.yaml -n <namespace>
     ```
 
     Puedes verificar el estado del servicio con:
 
     ```bash
-    kubectl get service
+    kubectl get service -n <namespace>
     ```
 
     Y el estado de todos los servicios con:
 
     ```bash
-    kubectl get svc
+    kubectl get svc -n <namespace>
     ```
 
 7. **Verificar los nodos**
